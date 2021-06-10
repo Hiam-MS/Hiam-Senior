@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\http\Controllers\signupController;
+use App\Models\Profile;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,8 +16,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-})->name('spm');
+});
 
+Route::get('/consultant/profile', function () {
+    return view('/Consultant/Profile');
+});
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+

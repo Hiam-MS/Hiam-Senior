@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Consultnat;
 
 class ConsultantController extends Controller
 {
@@ -14,6 +15,7 @@ class ConsultantController extends Controller
     public function index()
     {
         //
+        return view('Consultant.Profile');
     }
 
     /**
