@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\http\Controllers\signupController;
+use App\http\Controllers\SubmittalController;
 use App\Models\Profile;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,10 @@ Route::get('/', function () {
 
 Route::get('/consultant/profile', function () {
     return view('/Consultant/Profile');
+});
+
+Route::get('/submittal/ini', function () {
+    return view('/Submittal/Initiator');
 });
 Auth::routes();
 
