@@ -295,16 +295,20 @@
            
 
                 
-
+          <form >
+            <h4><i class="fa fa-angle-right"></i> Contractor Team Initator </h4>
+          </form>
            
-            
+            <br><br>
+
 
               
 
 
             </div>
             <!-- /content-panel -->
-            <form>
+            <form method="POST" action="/insert">
+            <br><br>
                 <label>Ref</label>
                 <input type="text" name="myName" class="myNameInput" required/>
 
@@ -321,12 +325,9 @@
                 <label>Rev</label>
                 <input type="text" name="myName" class="myNameInput" required/>
               </label>
-            </form>
-            <br><br>
-            
+              <br><br>
 
-            <form>
-                <label>Rev</label>
+              <label>Rev</label>
                 <input type="text" name="myName" class="myNameInput" required/>
                 
                  
@@ -339,25 +340,27 @@
                 <input type="date"  min="2017-04-01" max="2024-04-30">
                 </label>
 
-
-                
-            </form>
-        <br><br>
-            <form >
-            <label>Description
+                <br><br>
+                <label>Description
             <textarea type="text" name="myName" class="myNameInput"rows="4" cols="50" required></textarea>
                  </label>
-            
-            </form>
-            <br><br>
 
-            <form >
-            <button>Attach Files</button>
+                 <br><br>
+
+                 <button>Attach Files</button>
             <button>Cancel</button>
-            <button>Send</button>
+            <button  class="btn btn-primary"><a href="{{url('Submittal/Contractor_Recv')}}">Send</a> </button>
             <button>Ref</button>
-            
+
             </form>
+          
+           
+            <br><br>
+            
+
+            
+     
+           
            
           </div>
           <!-- /col-md-12 -->

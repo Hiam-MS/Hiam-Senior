@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Submittal extends Model
+class initiator extends Model
 {
     use HasFactory;
+
     protected $fillable = [
-        'ref', 'type', 'name','number', 'rev', 'date_issue','Return_date', 'action', 'refences',
+        'ref', 'date.', 'type' , 'no'  ,'name.' ,'required_date' ,'description' ,
     ];
 }

@@ -296,12 +296,13 @@
                 <h4><i class="fa fa-angle-right"></i> Submittals Log </h4>
                 <hr>
                 <thead>
+                @csrf
                   <tr>
                     <th><i class="fa fa-male"></i> Sub Ref.</th>
                     <th class="hidden-phone"><i class="fa fa-question-circle"></i> SUb-Type</th>
                    
                     <th><i class=" fa fa-edit"></i> Sub-Name</th>
-                    <th><i class=" fa fa-edit"></i> Sub-Subject</th>
+                    
                     <th><i class=" fa fa-edit"></i> Sub-No</th>
                     <th><i class=" fa fa-edit"></i> Sub-Rev</th>
                     <th><i class=" fa fa-edit"></i> Date of Issue</th>
@@ -315,8 +316,52 @@
                     <th></th>
                   </tr>
                 </thead>
+
+                <tbody>
+                  <tr>
+                  <td >101</td>
+                  <td >shop drawing</td>
+                  <td >SD</td>
+                  <td >1</td>
+                  <td ></td>
+                  <td >2021-06-23</td>
+                  <td >2021-06-25</td>
+                  <td >Approve</td>
+                  <td ></td>
+                  </tr>
+
+                  <tr>
+                  <td >102</td>
+                  <td >schedule</td>
+                  <td >SS</td>
+                  <td >2</td>
+                  <td ></td>
+                  <td >2021-06-23</td>
+                  <td ></td>
+                  <td >Not To Reply</td>
+                  <td ></td>
+                  </tr>
               
               </table>
+
+              <form>
+             
+                
+            
+
+             <button><a href="{{url('Submittal/Initator')}}">Initator</a></button>
+             
+
+             <button><a href="{{url('Submittal/Contractor_Recv')}}">Contractor  recieve</a></button>
+             <button><a href="{{url('Submittal/Contractor_Sent')}}">Contractor Send</a></button>
+             <button><a href="{{url('Submittal/Consultant_Recieve')}}">Consultant  recieve</a></button>
+             <button><a href="{{url('Submittal/Consultant_Reply')}}">Consultant Reply</a></button>
+             <button><a href="{{url('Submittal/Consultant_Team_Reply')}}">Consultant Team reply</a></button>
+
+            
+              
+            </form>
+            <br><br>
             </div>
             <!-- /content-panel -->
           </div>

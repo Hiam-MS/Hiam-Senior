@@ -293,7 +293,11 @@
           <div class="col-md-12">
             <div class="content-panel">
            
-
+            <form >
+            <h4><i class="fa fa-angle-right"></i> Consultant Reply </h4>
+          </form>
+           
+            <br><br>
                 
 
            
@@ -305,6 +309,7 @@
             </div>
             <!-- /content-panel -->
             <form>
+            <br><br>
                 <label>Ref</label>
                 <input type="text" name="myName" class="myNameInput" required/>
 

@@ -13,7 +13,7 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('projects', function ($table) {
             $table->id();
             $table->timestamps();
         });

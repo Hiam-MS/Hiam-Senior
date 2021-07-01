@@ -223,7 +223,7 @@
               </a>
           </li>
 		  <li>
-            <a href="resarch.html">
+            <a href="{{url('Submittal/Log_Submittals')}}">
               <i class="fa fa-book"></i>
               <span>Submittals </span>
               </a>
@@ -296,6 +296,7 @@
                 <h4><i class="fa fa-angle-right"></i> Main Corresposnding Log </h4>
                 <hr>
                 <thead>
+                @csrf
                   <tr>
                     <th><i class="fa fa-male"></i> Log</th>
                     <th class="hidden-phone"><i class="fa fa-question-circle"></i> Ref.</th>
@@ -317,29 +318,34 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>
-                      <a href='#'>Hiam</a>
-                    </td>
-                    <td class="hidden-phone">2</td>
-                  
-                    <td>Hiam</td>
-                    <td>Marah</td>
-                    <td>Electronic</td>
-                    <td>NO</td>
-                    <td>(Date)</td>
-                    <td>Firas</td>
-                    <td>(Date)</td>
-                    <td>(Date)</td>
-                    <td>(Date)</td>
+                    @foreach ($logs as $val)
+                      <tr>
+                      <td value="{{$val->id}}">{{ $val->id }}</td>
+                      <td value="{{$val->Log}}">{{ $val->Log }}</td>
+                      <td value="{{$val->ref}}">{{ $val->ref }}</td>
+                      <td value="{{$val->from}}">{{ $val->from }}</td>
+                      <td value="{{$val->to}}">{{ $val->to }}</td>
+                      
+                      <td value="{{$val->subject}}">{{ $val->subject }}</td>
 
-                    <td>
-					<button class="btn btn-default"><i class="fa fa-eye "></i></button>
-                      <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
-                      <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
-                      <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
-                    </td>
+                      <td value="{{$val->issue_date}}">{{ $val->issue_date }}</td>
+                      <td value="{{$val->internal_submitted_to}}">{{ $val->internal_submitted_to }}</td>
+                      <td value="{{$val->internal_submitted_date}}">{{ $val->internal_submitted_date }}</td>
+                      <td value="{{$val->internal_returned_date}}">{{ $val->internal_returned_date }}</td>
+                      <td value="{{$val->Returned_Date}}">{{ $val->Returned_Date }}</td>
+                    
+
+                      <td>
+                        <button class="btn btn-default"><i class="fa fa-eye "></i></button>
+                        <button class="btn btn-success btn-xs"><i class="fa fa-check"></i></button>
+                        <button class="btn btn-primary btn-xs"><i class="fa fa-pencil"></i></button>
+                        <button class="btn btn-danger btn-xs"><i class="fa fa-trash-o "></i></button>
+                      </td>
+                      </tr>
+                      @endforeach
                   </tr>
                  
+
                  
                 </tbody>
               </table>

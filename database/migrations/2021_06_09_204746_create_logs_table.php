@@ -13,9 +13,28 @@ class CreateLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('logs', function (Blueprint $table) {
-            $table->id();
+
+        Schema::create('logs', function ( $table) {
+            $table->increments('id');
+            $table->string('Log');
+            
+            $table->bigInteger('ref');
+            $table->string('from');
+            $table->string('to');
+            $table->string('subject');
+            $table->boolean('rev')->nullable();
+            $table->date('issue_date');
+            $table->string('internal_submitted_to')->nullable();
+            $table->date('internal_submitted_date')->nullable();
+            $table->date('internal_returned_date')->nullable();
+            $table->date('Returned_Date')->nullable();
+
+
+           
+            
             $table->timestamps();
+
+           
         });
     }
 

@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+
 class SubmittalController extends Controller
 {
     /**
@@ -14,6 +18,9 @@ class SubmittalController extends Controller
     public function index()
     {
         //
+
+        $submittals = DB::select('select * from submittals');
+        return view('/Submittal/Log_Submittals',['submittals'=>$submittals]);
     }
 
     /**
@@ -81,4 +88,66 @@ class SubmittalController extends Controller
     {
         //
     }
+
+
+    public function insertInitatorForm()
+    {
+     
+        $ref = $request->input('ref');
+        $date = $request->input('date');
+        $type = $request->input('type');
+        $no = $request->input('no');
+
+
+        $name = $request->input('name');
+        $required_date = $request->input('required_date');
+        $description = $request->input('description');
+
+        $data=array('ref'=>$ref,"date"=>$date,"type"=>$type,"no"=>$no);
+        DB::table('initiators')->insert($data);
+        
+        echo "Record inserted successfully.<br/>";
+        echo '<a href = "/insert">Click Here</a> to go back.';
+    }
+
+
+    public function ShowInitatorForm()
+    {
+        
+      return view ('Submittal.Initiator');
+    }
+
+    public function ShowContractorRecieveForm()
+    {
+        
+      return view ('Submittal.Contractor_Recv');
+    }
+
+    public function ShowContractorSendForm()
+    {
+        
+      return view ('Submittal.Contractor_Sent');
+    }
+
+    public function ShowConsultantRecieveForm()
+    {
+        
+      return view ('Submittal.Consultant_Recieve');
+    }
+
+    public function ShowConsultantReplyForm()
+    {
+        
+      return view ('Submittal.Consultant_Reply');
+    }
+    
+    
+    
+    public function ShowConsultantTeamReplyForm()
+    {
+        
+      return view ('Submittal.Consultant_Team_Reply');
+    }
+
+  
 }

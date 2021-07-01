@@ -13,9 +13,22 @@ class CreateSubmittalsTable extends Migration
      */
     public function up()
     {
-        Schema::create('submittals', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+        Schema::create('submittals', function ($table) {
+        
+            $table->increments('ref');
+            $table->string('type');
+            
+            $table->string('name');
+            $table->bigInteger('number');
+            
+            
+            $table->boolean('rev')->nullable();
+            $table->date('issue_date');
+            $table->date('Returned_Date')->nullable();
+            $table->string('action')->nullable();
+            $table->string('refernces')->nullable();
+            
+           
         });
     }
 
